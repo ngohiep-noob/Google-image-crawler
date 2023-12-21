@@ -7,6 +7,8 @@ page = sidebar.radio("Choose a page", ["Search", "Manage"])
 if page == "Search":
     # Title
     st.title('Image Retrieval Application')
+    # Title
+    st.title('Image Retrieval Application')
 
     # Devide 2 columns
     col1, col2 = st.columns(2)

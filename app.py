@@ -13,7 +13,7 @@ page = sidebar.radio("Choose a page", ["Search", "Manage"])
 sidebar.title("Image retrieval application")
 
 if page == "Search":
-    st.title('Image Retrieval Application')
+    # st.title('Image Retrieval Application')
     # Devide 2 columns
     col1, col2 = st.columns(2)
 
@@ -39,6 +39,7 @@ if page == "Manage":
     sidebar.subheader("Manage")
 
 
+#-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
 # import streamlit as st
 # from PIL import Image
@@ -67,6 +68,8 @@ if page == "Manage":
 
 # sidebar = st.sidebar
 # page = sidebar.radio("Choose a page", ["Search", "Manage"])
+
+#-------------------------------------------------------------------------------
 
 # if page == "Search":
 #     # Title

@@ -34,6 +34,20 @@ class Manager:
 
         return name_list
 
+    def images_in_landmark(self, landmark_name: str):
+        lm_folder = data_path / serialize_str(landmark_name)
+
+        if not lm_folder.exists():
+            raise Exception("Landmark does not exist!")
+
+        image_paths = list(lm_folder.iterdir())
+
+        images = []
+        for image_path in image_paths:
+            images.append(Image.open(image_path))
+
+        return images
+
     def create_landmark(
         self,
         name: str,

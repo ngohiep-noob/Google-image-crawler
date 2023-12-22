@@ -1,9 +1,8 @@
 import streamlit as st
 from PIL import Image
 from itertools import cycle
-from src.retriever import Retriever
-
-retriever = Retriever()
+from src.main import retriever
+from pathlib import Path
 
 
 def render_search_page():
@@ -33,7 +32,7 @@ def render_search_page():
             idx, _ = retriever.retrieve(query_image, num_images)
             for i, col in zip(idx, cols):
                 img, path = retriever.get_view(i)
-                landmark = path.parent.name
+                landmark = Path(path).parent.name
                 landmark = landmark.replace("_", " ").title()
                 img = img.resize((224, 224))
                 col.image(img, caption=landmark, use_column_width=True)

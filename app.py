@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 from search_page import render_search_page
+from manage_pages.manage_page import render_manage_page
 
 st.set_page_config(
     page_title="Vietnam46Attr IR",
@@ -19,6 +20,7 @@ if page == "Search":
 
 if page == "Manage":
     sidebar.subheader("Manage")
+    render_manage_page()
 
 
 # -------------------------------------------------------------------------------

@@ -4,10 +4,11 @@ from itertools import cycle
 from src.main import retriever
 from pathlib import Path
 
-
 def render_search_page():
+
     # Title
-    st.title("Vietnam46Attr image retrieval application")
+    st.markdown("<h2 style='text-align: center;'>Vietnam46Attr Image retrieval application</h2>", unsafe_allow_html=True)
+    # st.title("")
 
     # Devide 2 columns
     col1, col2 = st.columns([1, 2], gap="large")
@@ -23,14 +24,16 @@ def render_search_page():
         num_images = st.selectbox(
             "Number of images:", [i for i in range(1, 100)], index=9
         )
+        retrieve_btn = st.button(label="Retrieve")
 
     with col2:
         st.subheader("Retrieved images")
         cols = cycle(st.columns(3))
 
-        if uploaded_file is not None:
+        if uploaded_file is not None and retrieve_btn==True:
             idx, _ = retriever.retrieve(query_image, num_images)
             for i, col in zip(idx, cols):
+                # st.text(str(i) + ' eeeee ' + str(col))
                 img, path = retriever.get_view(i)
                 landmark = Path(path).parent.name
                 landmark = landmark.replace("_", " ").title()

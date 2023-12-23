@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
-from search_page import search_page
-from manage_pages.manage_page import manage_page
+from search_page.search_page import search_page
+from manage_page.manage_page import manage_page
 
 st.set_page_config(
     page_title="Vietnam46Attr IR",

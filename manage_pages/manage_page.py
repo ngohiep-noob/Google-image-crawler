@@ -3,8 +3,8 @@ from streamlit_option_menu import option_menu
 from manage_pages.collection_page import render_collection_page
 from manage_pages.action_page import render_action_page
 
-def render_manage_page():
 
+def manage_page():
     selected = option_menu(
         menu_title=None,  # required
         options=["Collection", "Action"],  # required

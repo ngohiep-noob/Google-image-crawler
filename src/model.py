@@ -4,23 +4,6 @@ import torchvision.models as models
 import numpy as np
 
 
-class MobileNetV2Extractor(nn.Module):
-    def __init__(self):
-        super(MobileNetV2Extractor, self).__init__()
-        self.model = torch.hub.load(
-            "pytorch/vision:v0.10.0", "mobilenet_v2", pretrained=True
-        )
-        self.model.eval()
-        self.model.classifier[-1].register_forward_hook(self.output_hook)
-
-    def output_hook(self, module, input, output):
-        self.feature = input[0]
-
-    def forward(self, x):
-        self.model(x)
-        return self.feature
-
-
 class MobileNetV3Extractor(nn.Module):
     def __init__(self):
         super(MobileNetV3Extractor, self).__init__()
@@ -85,9 +68,6 @@ def get_model(model_name="resnet50"):
         case "inceptionv3":
             model = InceptionV3Extractor()
             feature_size = 2048
-        case "mobilenetv2":
-            model = MobileNetV2Extractor()
-            feature_size = 1280
         case "mobilenetv3":
             model = MobileNetV3Extractor()
             feature_size = 1280

@@ -12,13 +12,13 @@ We designed 5 queries for each destination, the ground truth for each query is t
 
 Some examples of the dataset:
 
-![Some samples in dataset](docs\dataset_samples.png)
+![Some samples in dataset](docs/dataset_samples.png)
 
 ## Method
 
 We used a pretrained model to extract features from images, then used these features to build an index for fast retrieval. We utilized the [FAISS library](https://github.com/facebookresearch/faiss) to build the index and perform the search.
 
-![Method](docs\system_flow.png)
+![Method](docs/system_flow.png)
 
 Experiments were conducted on four different models: ResNet50, ResNet101, Mobilenetv3 and InceptionV3.
 

@@ -54,3 +54,21 @@ The best model is Mobilenetv3 with the impressive performance compared to other 
   - MRR: 0.9348
 
   _Detail results were shown in evaluation notebooks._
+
+## Application
+
+We also built a simple web application to demonstrate the image retrieval system.
+
+The supported features:
+
+- Search for images of a destination by using another image that is uploaded from user's computer or from an image url.
+
+- Display the list of destionation.
+
+- Display all images of a destination.
+
+- Add new destination.
+
+- Add new images to a destination.
+
+Demo can be found at [here](https://youtu.be/HQevBwrTBFA)
